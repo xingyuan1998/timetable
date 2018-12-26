@@ -1,0 +1,35 @@
+<view class="page">
+ <!--页头-->
+ <view class="page__hd">
+    <view class='head'>
+        <view  class='userinfo-avatar'><navigator  url="/pages/my/info"><open-data  type="userAvatarUrl"></open-data></navigator></view>
+    <view><text class='userName'>{{user.name}}</text></view>
+    </view>
+
+ </view>
+ <!--主体-->
+ <view class="page__bd body"> 
+    <van-cell-group>
+      <van-cell
+        title="性别"
+        value="{{user.gender}}"
+      />
+      <van-cell
+        title="学号"
+        value="{{user.stu_id}}"
+
+      />
+      <van-cell
+        title="学院"
+        value="{{user.school}}"
+
+      />
+      <van-cell
+        title="专业"
+        value="{{user.major}}"
+
+      />
+    </van-cell-group>
+ </view>
+ <!--没有页脚-->
+</view>

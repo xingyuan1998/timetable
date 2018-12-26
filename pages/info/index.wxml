@@ -1,0 +1,69 @@
+<!--index.wxml-->
+<view class='page__hd body'>
+  <view class='panel'>
+    <view class='panel-header'>
+      <image class='panel-header-image' src='../../icon/gongju.png'></image>
+      <view class='panel-header-title'>最近考试</view>
+    </view>
+    <view class='panel-body'>
+
+      <view wx:for="{{exams}}" wx:for-index="idx" wx:key="item" wx:for-item="item">
+        <view class='exam'>
+          <view class='exam-time'>
+            {{item.relese}}
+          </view>
+          <view class='exam-name'>
+            {{item.name}}
+          </view>
+          <view class='exam-content'>
+            <view>
+              <image class='exam-time-image' src='../../icon/shijian.png'></image>
+              <view class='exam-content'>{{item.time}}</view>
+            </view>
+            <view class='exam-room'>
+              <image class='exam-room-image' src='../../icon/didian.png'></image>
+              <view class='exam-content'>{{item.room}}</view>
+            </view>
+          </view>
+
+        </view>
+      </view>
+
+
+    </view>
+  </view>
+
+  <view class='panel'>
+    <view class='panel-header'>
+      <image class='panel-header-image' src='../../icon/chengji.png'></image>
+      <view class='panel-header-title'>考试成绩</view>
+    </view>
+    <view class='panel-body'>
+
+    <view wx:for="{{records}}" wx:for-index="idx" wx:key="item" wx:for-item="item">
+          <view class='record'>
+
+        <view class='record-content'>
+          <view class='record-name'>
+            {{item.name}}
+          </view>
+          <view>
+            <view class='record-gpa'>绩点：{{item.gpa}}</view>
+          </view>
+        </view>
+
+
+        <view class='record-value'>
+          {{item.grade}}分
+        </view>
+
+      </view>
+      <view class='clear'></view>
+    </view>
+
+    </view>
+  </view>
+
+
+
+</view>

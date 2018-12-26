@@ -1,0 +1,46 @@
+<!--pages/jwxt/index.wxml-->
+<!-- <van-cell-group>
+  <van-field
+    value="{{ username }}"
+    required
+    clearable
+    label="用户名"
+    icon="question"
+    placeholder="请输入用户名"
+    bind:click-icon="onClickIcon"
+  />
+
+  <van-field
+    value="{{ password }}"
+    type="password"
+    label="密码"
+    placeholder="请输入密码"
+    required
+    border="{{ false }}"
+  />
+</van-cell-group> -->
+<view class='head'>
+        <view  class='userinfo-avatar'><navigator  url="/pages/my/info"><open-data  type="userAvatarUrl"></open-data></navigator></view>
+</view>
+
+
+
+<view class="weui-cell weui-cell_input">
+  <view class="weui-cell__hd">
+    <view class="weui-label">学号</view>
+  </view>
+  <view class="weui-cell__bd">
+    <input class="weui-input" bindinput='bindUserNameInput' type="text" name="username" value="{{username}}" placeholder="请输入学号" />
+  </view>
+</view>
+
+<view class="weui-cell weui-cell_input">
+  <view class="weui-cell__hd">
+    <view class="weui-label">密码</view>
+  </view>
+  <view class="weui-cell__bd">
+    <input class="weui-input" bindinput='bindPasswordInput' type="password" name="password" value="{{password}}" placeholder="请输入教务密码" />
+  </view>
+</view>
+
+<button class="weui-btn submit" bindtap='formSubmit' type="primary" plain="true">登录</button>

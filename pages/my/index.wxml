@@ -1,0 +1,36 @@
+<view class="page">
+ <!--页头-->
+ <view class="page__hd">
+    <view class='head'>
+        <view  class='userinfo-avatar'><navigator  url="/pages/my/info"><open-data  type="userAvatarUrl"></open-data></navigator></view>
+    <view><text class='userName'>{{user.name}}</text></view>
+    </view>
+
+ </view>
+ <!--主体-->
+ <view class="page__bd body"> 
+    <van-cell-group>
+      <van-cell
+        title="个人资料"
+        is-link
+        url="/pages/user/info"
+      />
+      <van-cell
+        title="重新绑定教务系统"
+        is-link
+        url="/pages/jwxt/index"
+
+      />
+      <van-cell
+        title="设置"
+        is-link
+      />
+      <van-cell
+        title="关于我们"
+        is-link
+        url="/pages/about/index"
+      />
+    </van-cell-group>
+ </view>
+ <!--没有页脚-->
+</view>

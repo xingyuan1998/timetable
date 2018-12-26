@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/my/index",
+    "pages/timetable/index",
+    "pages/login/login",
+    "pages/info/index",
+    "pages/jwxt/index",
+    "pages/user/info",
+    "pages/about/index",
+    "pages/avatar/combine/combine",
+    "pages/avatar/imageeditor/imageeditor",
+    "pages/avatar/index/index"
+  ],
+  "tabBar": {
+    "color": "#626567",
+    "selectedColor": "#2A8CE5",
+    "backgroundColor": "#FBFBFB",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icon/shouye.png",
+        "selectedIconPath": "icon/shouye_selected.png",
+        "selectedColor": "#1afa29"
+      },
+      {
+        "pagePath": "pages/timetable/index",
+        "text": "课表",
+        "iconPath": "icon/kebiaoxinxi.png",
+        "selectedIconPath": "icon/kebiaoxinxi_selected.png",
+        "selectedColor": "#1afa29"
+      },
+      {
+        "pagePath": "pages/info/index",
+        "text": "考试",
+        "iconPath": "icon/zaixiankaoshi.png",
+        "selectedIconPath": "icon/zaixiankaoshi_selected.png",
+        "selectedColor": "#1afa29"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "我的",
+        "iconPath": "icon/wode.png",
+        "selectedIconPath": "icon/wode_selected.png",
+        "selectedColor": "#1afa29"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx546c0e2609fbb964"
+  ]
+}

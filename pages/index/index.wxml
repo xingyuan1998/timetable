@@ -1,0 +1,73 @@
+<!--index.wxml-->
+<view class='page__hd'>
+  <view class='pandel'>
+    <view class='panel-header'>
+      <image class='panel-header-image' src='../../icon/daohang.png'></image>
+      <view class='panel-header-title'>今日课程</view>
+    </view>
+    <view class='panel-body'>
+      <view wx:for="{{subjects}}" wx:for-index="idx" wx:key="item" wx:for-item="item">
+        <view class='subject'>
+          <view class='subject-time'>
+            {{item.showTime}}
+          </view>
+          <view>
+            <view class='subject-name'>
+              {{item.name}}
+            </view>
+            <view>
+              <image class='subject-room-image' src='../../icon/didian.png'></image>
+              <view class='subject-room'>{{item.room}}</view>
+            </view>
+          </view>
+        </view>
+        <view class='clear'></view>
+      </view>
+
+
+      <view wx:if="{{!hasSubject}}">今天没有课程哦</view>
+
+    </view>
+  </view>
+
+  <view class='pandel'>
+    <view class='panel-header'>
+      <image class='panel-header-image' src='../../icon/daohang.png'></image>
+      <view class='panel-header-title'>工具</view>
+    </view>
+    <view class='panel-body'>
+
+
+      <van-row>
+        <van-col span="6">
+
+
+<navigator target="miniProgram" open-type="navigate" app-id="wx546c0e2609fbb964">
+          <view class='wechat'>
+          <image class='wechatapp-image' src='../../icon/touxiangchou.png'></image>
+          <view class='wechat-text'>矿大头像戳</view>
+          </view>
+
+</navigator>
+
+
+        </van-col>
+
+      <van-col span="6">
+        <navigator url='../../pages/avatar/index/index'>
+            <view class='wechat'>
+            <image class='wechatapp-image' src='../../icon/touxiangchou.png'></image>
+            <view class='wechat-text'>圣诞头像</view>
+            </view>
+
+        </navigator>
+      </van-col>
+
+      </van-row>
+
+
+    </view>
+  </view>
+
+
+</view>

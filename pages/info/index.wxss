@@ -1,0 +1,72 @@
+.panel{
+  background-color: #fff;
+  margin-bottom: 10rpx;
+}
+.body{
+  background-color: #f5f5f5;
+}
+
+.panel-header-image{
+  height: 50rpx;
+  width: 50rpx;
+  float: left;
+  margin: 20rpx;
+}
+
+.panel-header{
+  height: 80rpx;
+  font-size: 48rpx;
+  line-height: 80rpx;
+}
+
+.panel-body{
+  margin: 10rpx;
+}
+.exam{
+  margin: 15rpx;
+}
+.exam-time{
+    font-size: 48rpx;
+  text-align: center;
+}
+.exam-name{
+  font-size: 38rpx;
+  text-align: center;
+}
+
+
+.exam-content{
+  line-height: 50rpx;
+  font-size: 28rpx;
+}
+.exam-time-image{
+  height: 35rpx;
+  width: 35rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+.exam-room-image{
+  height: 35rpx;
+  width: 35rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+
+.record{
+  height: 50rpx;
+  margin: 5rpx;
+}
+.record-content{
+  float: left;
+  margin-left: 20rpx;
+}
+.record-gpa{
+  font-size: 28rpx;
+}
+.record-value{
+  float: right;
+  line-height: 50rpx;
+}
+.clear{
+  clear: both;
+}

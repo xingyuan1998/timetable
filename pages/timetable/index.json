@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+   "van-nav-bar": "../../vant-weapp/nav-bar/index"
+  },
+  "navigationBarTitleText": "第1周",
+  "enablePullDownRefresh": true
+}

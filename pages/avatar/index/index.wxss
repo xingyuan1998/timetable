@@ -1,0 +1,23 @@
+/* pages/index/index.wxss */
+.btnZoom{
+  position: relative;
+  width:100%;
+  height:300px;
+  text-align: center;
+}
+.avatar-button{
+  margin: 10px 20px 0px 20px;
+}
+.avatar-container{
+  width:100%;
+  height:300px;
+  text-align: center;
+}
+.bgPic,.emptyBg{
+  height:300px;
+  width:300px;
+  text-align: center;
+}
+.emptyBg{
+  /* border: 2px solid; */
+}

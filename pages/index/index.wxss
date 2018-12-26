@@ -1,0 +1,48 @@
+/**index.wxss**/
+.panel{
+  margin: 15rpx;
+}
+.panel-header-image{
+  height: 50rpx;
+  width: 50rpx;
+  float: left;
+  margin: 20rpx;
+}
+
+.panel-header{
+  height: 80rpx;
+  font-size: 48rpx;
+  line-height: 80rpx;
+}
+
+.panel-body{
+  margin: 10rpx;
+}
+.subject-time{
+  padding: 30rpx;
+  float: left;
+}
+.subject-room-image{
+  height: 25rpx;
+  width: 25rpx;
+  float: left;
+  margin-right: 5rpx;
+}
+.subject-room{
+  font-size: 24rpx;
+}
+
+.subject{
+  margin: 5rpx;
+}
+.clear{
+  clear: both;
+}
+.wechat{
+  text-align: center;
+  font-size: 30rpx;
+}
+.wechatapp-image{
+  width: 100rpx;
+  height: 100rpx;
+}

@@ -1,0 +1,36 @@
+<!--about.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="black-cover"></view>
+    <image class="logo" src="../../icon/about.png"></image>
+  </view>
+  <view class="content">
+    <view class="version">
+      <view class="version-title">
+        <text class="title-name">学生在线</text>
+      </view>
+    </view>
+    <view class="describe">
+      <text class="desc-title">简介</text>
+      <text class="desc-content">中国矿业大学翔工作室始建于2001年3月，隶属于中国矿业大学学生工作处，后改名为中国矿业大学学生在线。翔工作室云集了视觉设计、前端后端、视频技术、移动端开发等等人才，组建了一个旨在为全校同学提供服务的学生团队，设计出了许多的优秀产品，比如深受师生喜爱的矿大导航站、矿大周年庆头像戳等。
+分组</text>
+      <text class="desc-title">联系我们</text>
+      <view class="desc-list">
+        <view bindtap='copyText' data-text="966367897" class="desc-list-item">用户交流QQ群: 966367897（点击复制）</view>
+        <text class="desc-title">关联我们</text>
+        <view bindtap='copyText' data-text="wx6fb9014aa357a79e">
+          <text class="desc-content">若您或您的朋友在运营与中国矿业大学相关的公众号(学生组织/社团/校园自媒体等)，诚挚地欢迎您的公众号关联我们的小程序，并期待与您合作！\nAppID: wx6fb9014aa357a79e (点击复制)</text>
+        </view>
+
+      </view>
+    </view>
+    <view class="footer">
+      <view class="footer-lanshan">
+        <image src="/images/more/neusc.png"></image>
+        <text>学生在线2018-2019</text>
+      </view>
+      <text>学生在线 · www.atcumt.com</text>
+      <text>Copyright @ {{year}} All Rights Reserved</text>
+    </view>
+  </view>
+</view>
