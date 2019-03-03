@@ -1,0 +1,20 @@
+.page{margin:10rpx;}
+.weui-btn{background: #f4de3b!important;color:#000!important;}
+.weui-cells::before{border-top: 0!important;}
+.weui-cells{margin-top:15px;}
+.delete{
+  bottom: 150rpx;
+  left: 110rpx;
+}
+.deleteimg{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  bottom: 150rpx;
+}
+.close-picker{
+  color: blue;
+  text-align: right;
+  margin: 10rpx;
+
+}

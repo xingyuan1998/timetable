@@ -11,7 +11,10 @@
     "pages/about/index",
     "pages/avatar/combine/combine",
     "pages/avatar/imageeditor/imageeditor",
-    "pages/avatar/index/index"
+    "pages/avatar/index/index",
+    "pages/dynamic/index",
+    "pages/dynamic/add",
+    "pages/dynamic/detail"
   ],
   "tabBar": {
     "color": "#626567",

@@ -33,9 +33,9 @@ App({
             }else if(data.data['code'] == 0){
               wx.setStorageSync('token', data.data['token']);
               console.info("存储token成功");
-              wx.switchTab({
-                url: '../../pages/index/index',
-              });
+              // wx.switchTab({
+              //   url: '../../pages/index/index',
+              // });
             }
             // that.getUser();
           },

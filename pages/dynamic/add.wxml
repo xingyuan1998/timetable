@@ -1,0 +1,52 @@
+<view class="page">
+<view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{errorMsg}}</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+            <view class="weui-cell__bd">
+                <textarea class="weui-textarea" auto-focus bindfocus="bindfocus" bindinput="bindinput" placeholder="这一刻的想法..." style="height: 5.3em" />
+            </view>
+        </view>
+        <view class="weui-cell__bd">
+            <view class="weui-uploader">
+                <view class="weui-uploader__bd">
+                    <view class="weui-uploader__files" id="uploaderFiles">
+                        <view wx:for="{{files}}" wx:key="*this">
+                            <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                              <view class="delete">
+                                <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                                <view    bindtap="deleteImg" data-index="{{index}}">
+                                  <image src="../../icon/delete.png" class="deleteimg"></image>
+                                </view>
+                              </view>
+
+                            </view>
+                        </view>
+                    </view>
+                    <view class="weui-uploader__input-box">
+                        <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+
+<van-popup show="{{ show }}" bind:close="onPickerClose"  position="bottom">
+<view bindtap='onPickerClose' class='close-picker'>关闭</view>
+<van-picker columns="{{ columns }}" bind:change="onPickerChange" />
+</van-popup>
+
+  <van-cell
+    title="内容类型"
+    value="{{typeName}}"
+    bindtap="onPickerShow"
+  />
+
+    <van-switch-cell
+  title="匿名"
+  checked="{{ checked }}"
+  bind:change="onChange"
+/>
+
+        <button class="weui-btn" bindtap="submit" type="primary">发布</button>
+</view>
