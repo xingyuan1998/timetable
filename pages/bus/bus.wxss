@@ -1,0 +1,4 @@
+.bus-image{
+  margin-left: 50rpx;
+  height: 1600rpx;
+}
