@@ -21,10 +21,10 @@
         url="/pages/jwxt/index"
 
       />
-      <van-cell
+      <!-- <van-cell 
         title="设置"
         is-link
-      />
+      /> -->
       <van-cell
         title="关于我们"
         is-link
