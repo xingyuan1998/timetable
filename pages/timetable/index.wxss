@@ -6,7 +6,7 @@
 }
 
 .kcb-item {
-  position: absolute;
+  position: absolute;             
   justify-content: center;
   display: flex;
   align-items: center;
@@ -16,6 +16,7 @@
 .smalltext {
   font-size: 8pt;
   color: #fff;
+  /* color: black; */
   padding-left: 2px;
 }
 
@@ -44,7 +45,7 @@
 
 .left {
   width: 35rpx;
-  height: 100rpx;
+  height: 150rpx;
   font-size: 9pt;
   justify-content: center;
   display: flex;
