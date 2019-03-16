@@ -22,55 +22,55 @@ Page({
    let currentDay = wx.getStorageSync("currentDay") || 1;
    let currentWeek = wx.getStorageSync("currentWeek") || 1;
    this.setData({currentWeek:currentWeek});
-    // this.setData({ weekName: "第" + currentWeek + "周" });
+    //  this.setData({ weekName: "第" + currentWeek + "周" });
     wx.setNavigationBarTitle({
       title: "第" + currentWeek + "周"
     })
   },
 
-  // getData: function() {
-  //   let that = this;
-  //   let kbList = wx.getStorageSync("kb") || [];
-  //   console.info(kbList.length);
-  //   if(kbList.length > 0){
-  //     let kbListCurWeek = [];
-  //     kbList.forEach(item => {
-  //       if (that.hasSubject(item['week_list'], that.data.currentWeek)) {
-  //         var subject = {}
-  //         subject.xqj = item['day'];
-  //         subject.skjc = item['start'];
-  //         subject.skcd = item['step'];
-  //         subject.kcmc = item['name'] + "@" + item['room'];
-  //         kbListCurWeek.push(subject);
-  //       }
-  //     });
-  //     that.setData({ wlist: kbListCurWeek });
-  //   }else{
-  //     util.getReq("kb", {}, function (res) {
-  //       console.info(res);
-  //       if (res['code'] === 0) {
-  //         wx.setStorageSync("kb", res['data']['timetable']);
-  //         let kbList = res['data']['timetable'];
-  //         let kbListCurWeek = [];
-  //         kbList.forEach(item => {
-  //           if (that.hasSubject(item['week_list'], that.data.currentWeek)) {
-  //             var subject = {}
-  //             subject.xqj = item['day'];
-  //             subject.skjc = item['start'];
-  //             subject.skcd = item['step'];
-  //             subject.kcmc = item['name'] + "@" + item['room'];
-  //             kbListCurWeek.push(subject);
-  //           }
-  //         });
-  //         that.setData({ wlist: kbListCurWeek });
+  getData: function() {
+    let that = this;
+    let kbList = wx.getStorageSync("kb") || [];
+    console.info(kbList.length);
+    if(kbList.length > 0){
+      let kbListCurWeek = [];
+      kbList.forEach(item => {
+        if (that.hasSubject(item['week_list'], that.data.currentWeek)) {
+          var subject = {}
+          subject.xqj = item['day'];
+          subject.skjc = item['start'];
+          subject.skcd = item['step'];
+          subject.kcmc = item['name'] + "@" + item['room'];
+          kbListCurWeek.push(subject);
+        }
+      });
+      that.setData({ wlist: kbListCurWeek });
+    }else{
+      util.getReq("kb", {}, function (res) {
+        console.info(res);
+        if (res['code'] === 0) {
+          wx.setStorageSync("kb", res['data']['timetable']);
+          let kbList = res['data']['timetable'];
+          let kbListCurWeek = [];
+          kbList.forEach(item => {
+            if (that.hasSubject(item['week_list'], that.data.currentWeek)) {
+              var subject = {}
+              subject.xqj = item['day'];
+              subject.skjc = item['start'];
+              subject.skcd = item['step'];
+              subject.kcmc = item['name'] + "@" + item['room'];
+              kbListCurWeek.push(subject);
+            }
+          });
+          that.setData({ wlist: kbListCurWeek });
 
 
-  //       }
-  //     });
-  //   }
+        }
+      });
+    }
 
 
-  // },
+  },
 
   getTimeTableInfo: function () {
     let that = this;
@@ -95,7 +95,6 @@ Page({
             }
           });
           that.setData({ wlist: kbListCurWeek });
-
 
         }
       });
