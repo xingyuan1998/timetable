@@ -5,6 +5,8 @@ const app = getApp()
 
 Page({
   data: {
+    elec_choose_button:true,
+    elec_show_text:false,
     motto: 'Hello World',
     hasSubject: false,
     subjects: [],
@@ -18,8 +20,44 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function() {
-  },
+  onLoad:function(option){
+    var elec_info=wx.getStorageSync("elec_info")||null;
+    console.log(elec_info);
+    if(elec_info==null){
+
+    }else{
+      this.setData({
+        elec_choose_button: false,
+        elec_show_text: true,
+      });
+      // wx.request({
+      //   url: '',
+      //   data:{
+      //     //暂
+      //     content:elec_info.content,
+      //     yuan: elec_info.yuan,
+      //     lou: elec_info.lou
+      //   },
+
+      //   success:function (res) {
+      //     //处理
+      //     wx.hideNavigationBarLoading();
+      //   },
+      //   fail:function () {
+      //     console.log("fail");
+      //   },
+      //   complete:function () {
+
+      //   }
+      // })
+      // wx.showNavigationBarLoading();
+      util.getReq("ele",{},function(res){
+        console.log(res);
+      });
+
+    }
+  }
+  ,
   getTodaySubject: function() {
     let that = this;
     let subjectList = wx.getStorageSync("kb") || [];
@@ -28,7 +66,7 @@ Page({
 
       let kbListCurWeek = [];
       subjectList.forEach(item => {
-        console.info(item['day']);
+        // console.info(item['day']);
         if (this.hasSubject(item['week_list'], this.data.currentWeek) && item['day'] === this.data.currentDay){
           item.showTime = item['start'] + "-" + (item['start'] + item['step'] - 1) + "节";
           console.info(item['day'])
