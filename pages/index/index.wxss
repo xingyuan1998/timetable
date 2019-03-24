@@ -46,3 +46,30 @@
   width: 100rpx;
   height: 100rpx;
 }
+
+.button-elec{
+  width:300rpx;
+  height:100rpx;
+  font-size: 40rpx;
+  line-height: 100rpx;
+  position:absolute;
+  left:200rpx;
+  color:grey;
+}
+
+.text-elec{
+  font-size: 32rpx;
+  font-weight: 200;
+  color:black;
+}
+
+.text-show-elec{
+  height:50rpx;
+  line-height: 50rpx;
+  font-size: 50rpx;
+  font-weight:500;
+  display: block;
+  color: grey;
+  margin-left:250rpx;
+  margin-top:20rpx;
+}

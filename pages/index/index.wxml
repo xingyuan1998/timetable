@@ -3,7 +3,7 @@
   <view class='pandel'>
     <view class='panel-header'>
       <image class='panel-header-image' src='../../icon/daohang.png'></image>
-      <view class='panel-header-title'>今日课程</view>
+      <view   class='panel-header-title'>今日课程</view>
     </view>
     <view class='panel-body'>
       <view wx:for="{{subjects}}" wx:for-index="idx" wx:key="item" wx:for-item="item">
@@ -30,6 +30,8 @@
     </view>
   </view>
 
+
+  <!-- 工具 -->
   <view class='pandel'>
     <view class='panel-header'>
       <image class='panel-header-image' src='../../icon/daohang.png'></image>
@@ -42,9 +44,9 @@
         <van-col span="6">
 
 
-<navigator target="miniProgram" open-type="navigate" app-id="wx546c0e2609fbb964">
+<navigator  target="miniProgram" open-type="navigate" app-id="wx546c0e2609fbb964">
           <view class='wechat'>
-          <image class='wechatapp-image' src='../../icon/touxiangchou.png'></image>
+          <image class='wechatapp-image' src='../../icon/Logo-01.png'></image>
           <view class='wechat-text'>矿大头像戳</view>
           </view>
 
@@ -54,19 +56,54 @@
         </van-col>
 
       <van-col span="6">
-        <navigator url='../../pages/avatar/index/index'>
+        <navigator hidden="true" url='../../pages/avatar/index/index'>
             <view class='wechat'>
-            <image class='wechatapp-image' src='../../icon/touxiangchou.png'></image>
+            <image class='wechatapp-image' src='../../icon/Logo-01.png'></image>
             <view class='wechat-text'>圣诞头像</view>
             </view>
 
         </navigator>
       </van-col>
 
+      <van-col span="6">
+        <navigator url='../../pages/bus/bus'>
+            <view class='wechat'>
+            <image class='wechatapp-image' src='../../icon/Logo-01.png'></image>
+            <view class='wechat-text'>校车</view>
+            </view>
+        </navigator>
+      </van-col>
+
+      <van-col span="6">
+        <navigator url='../../pages/calendar/calendar'>
+            <view class='wechat'>
+            <image class='wechatapp-image' src='../../icon/Logo-01.png'></image>
+            <view class='wechat-text'>校历</view>
+            </view>
+        </navigator>
+      </van-col>
+
       </van-row>
 
 
+
     </view>
+  </view>
+
+  <view class='pandel'>
+    <view class='panel-header'>
+      <image class='panel-header-image' src='../../icon/daohang.png'></image>
+      <view class='panel-header-title'>宿舍余电</view>
+    </view>
+    <navigator url="../../pages/electricity/electricity" open-type="redirect">
+      <view>  
+          <text class="text-elec">宿舍余电：</text>
+          <text class="button-elec" wx:if="{{elec_choose_button}}" class='text-show-elec'>
+            选择宿舍
+          </text>
+          <text wx:if="{{elec_show_text}}" class='text-show-elec'>{{elec}} 度</text>
+      </view>
+    </navigator>
   </view>
 
 

@@ -1,0 +1,37 @@
+<view class="page">
+  <view class="choose">
+    <van-popup show="{{ show }}" bind:close="onPickerClose"  position="bottom">
+    <view bindtap='onPickerClose' class='close-picker' >关闭</view>
+    <van-picker columns="{{ columns }}" bind:change="onPickerChange" />
+    </van-popup>
+        <van-cell
+        class="van-cell-shq"
+
+        title="{{docu_title}}"
+        value="{{typeName}}"
+        bindtap="onPickerShow"
+      />
+  </view>
+
+  <view class="choose">
+    <van-popup show="{{ show_c }}" bind:close="onPickerClose_c"  position="bottom">
+    <view bindtap='onPickerClose_c' class='close-picker' >关闭</view>
+    <van-picker columns="{{ columns_c }}" bind:change="onPickerChange_c" />
+    </van-popup>
+        <van-cell
+        class="van-cell-shq"
+
+        title="{{docu_title_c}}"
+        value="{{typeName_c}}"
+        bindtap="onPickerShow_c"
+      />
+  </view>
+  <view class="docu-form">
+    <text class='docu-text'>寝室：</text>
+    <input bindinput="bindinput" type='text' class='docu-input'></input>
+  </view>
+  <view class="blank"></view>
+  <button class="choose-button" bindtap="submit">确定</button>
+
+  <text class="tips" >寝室号输入规则：\n1.桃一楼直接输入房间号，如：2031\n2.研1，2楼输入单元号-房间号，如：3-501\n3.其他楼栋，输入区域和房间号，如：B4051</text>
+</view>

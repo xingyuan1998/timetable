@@ -21,3 +21,12 @@ page{
   border: 2px solid #fff;  
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
 }  
+
+
+.tips{
+  font-size: 12px;
+  color: grey;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}

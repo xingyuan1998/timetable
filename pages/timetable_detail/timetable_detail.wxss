@@ -1,0 +1,23 @@
+.pages{
+  
+}
+
+.title-list{
+  font-size: 22px;
+  color: #333;
+}
+
+.first-list{
+  color: #333;
+  font-weight: 500;
+  display: inline-block;
+  height: 50rpx;
+}
+
+.detail-list{
+  color: gray;
+}
+
+.blocks-space{
+  height: 50rpx;
+}

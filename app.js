@@ -1,5 +1,6 @@
 //app.js
 var utils = require('./utils/util.js');
+var elec_info;
 App({
   onLaunch: function () {
     // 展示本地存储能力

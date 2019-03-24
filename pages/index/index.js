@@ -5,12 +5,15 @@ const app = getApp()
 
 Page({
   data: {
+    elec_choose_button:true,
+    elec_show_text:false,
     motto: 'Hello World',
     hasSubject: false,
     subjects: [],
     currentWeek:16,
     currentDay:4,
-    weekName:"第一周"
+    weekName:"第一周",
+    elec:0
   },
   //事件处理函数
   bindViewTap: function() {
@@ -18,20 +21,52 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function() {
+  onLoad:function(option){
+    var elec_info=wx.getStorageSync("elec_info")||null;
+    if(elec_info==null){
+
+    }else{
+      console.log(elec_info);
+      var that=this;
+      wx.showNavigationBarLoading();
+      util.getReq("ele",elec_info,function(res){
+        that.setData({
+          elec_choose_button: false,
+          elec_show_text: true,
+        });
+        console.log(res);
+        if (res.code==1){
+          that.setData({
+            elec_choose_button: true,
+            elec_show_text: false,
+          });
+          wx.showToast({
+            title: '抓取失败',
+            icon: 'none',
+          });
+          return;
+        }else{
+          that.setData({ elec: res.data.ele });
+          wx.hideNavigationBarLoading();
+        }
+      });
+
+    }
   },
+
+
   getTodaySubject: function() {
     let that = this;
     let subjectList = wx.getStorageSync("kb") || [];
-    console.info(subjectList);
+    //console.info(subjectList);   //本地数据查看
     if (subjectList.length > 0) {
 
       let kbListCurWeek = [];
       subjectList.forEach(item => {
-        console.info(item['day']);
+        //console.info(item['day']);
         if (this.hasSubject(item['week_list'], this.data.currentWeek) && item['day'] === this.data.currentDay){
           item.showTime = item['start'] + "-" + (item['start'] + item['step'] - 1) + "节";
-          console.info(item['day'])
+          //console.info(item['day'])
           kbListCurWeek.push(item);
         }
       });

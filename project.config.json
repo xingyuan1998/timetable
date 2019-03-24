@@ -4,12 +4,13 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"nodeModules": false
+		"nodeModules": false,
+		"autoAudits": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.2",
@@ -38,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 12,
 			"list": [
 				{
 					"id": -1,
@@ -73,7 +74,56 @@
 				{
 					"id": -1,
 					"name": "dynamic/add",
-					"pathName": "pages/dynamic/add"
+					"pathName": "pages/dynamic/add",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "timetable/index",
+					"pathName": "pages/timetable/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "index/index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "my/index",
+					"pathName": "pages/my/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "my/index",
+					"pathName": "pages/my/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "user/info",
+					"pathName": "pages/user/info",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "elec",
+					"pathName": "pages/electricity/electricity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "elec",
+					"pathName": "pages/electricity/electricity",
+					"scene": null
 				}
 			]
 		}

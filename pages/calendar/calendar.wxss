@@ -1,0 +1,5 @@
+/* pages/calendar/calendar.wxss */
+.calendar-image{
+  margin-left: 50rpx;
+  height: 1600rpx;
+}

@@ -1,0 +1,13 @@
+<view class="pages">
+  <view class='detail-info' wx:for='{{detail}}' wx:key="item">
+    <view class='title-list'>{{item.name}}</view>
+      <view>
+        <view class="first-list">教室</view><text class="detail-list" space="emsp">  {{item.room}}\n</text>
+        <view class="first-list">周数</view><text class="detail-list" space="emsp">  {{item.week_list}}周\n</text>
+        <view class="first-list">节数</view><text class="detail-list" space="emsp">  {{item.showtime}}\n</text>
+        <view class="first-list">老师</view><text class="detail-list" space="emsp">  {{item.teacher}}\n</text>
+      </view>
+      <view class='blocks-space'></view>
+  </view>
+  <view wx:if="{{!hasSubject}}">课表导入错误</view>
+</view>

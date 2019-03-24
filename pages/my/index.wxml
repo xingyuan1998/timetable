@@ -21,10 +21,10 @@
         url="/pages/jwxt/index"
 
       />
-      <van-cell
+      <!-- <van-cell 
         title="设置"
         is-link
-      />
+      /> -->
       <van-cell
         title="关于我们"
         is-link
@@ -33,4 +33,6 @@
     </van-cell-group>
  </view>
  <!--没有页脚-->
+
+ <text class="tips">如果设置完信息后没有反应，那可能需要重启程序。</text>
 </view>
