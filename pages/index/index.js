@@ -1,4 +1,4 @@
-//index.js
+﻿//index.js
 //获取应用实例
 let util = require("../../utils/util.js");
 const app = getApp()
@@ -54,7 +54,6 @@ Page({
     }
   },
 
-
   getTodaySubject: function() {
     let that = this;
     let subjectList = wx.getStorageSync("kb") || [];
@@ -63,6 +62,7 @@ Page({
 
       let kbListCurWeek = [];
       subjectList.forEach(item => {
+
         //console.info(item['day']);
         if (this.hasSubject(item['week_list'], this.data.currentWeek) && item['day'] === this.data.currentDay){
           item.showTime = item['start'] + "-" + (item['start'] + item['step'] - 1) + "节";

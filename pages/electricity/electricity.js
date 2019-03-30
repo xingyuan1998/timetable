@@ -1,4 +1,4 @@
-var app=getApp();
+﻿var app=getApp();
 
 Page({
 
@@ -26,6 +26,7 @@ Page({
     // console.info(event);
     const { picker, value, index } = event.detail;
     // console.info(index);
+
     this.setData({
       typeIndex: index,
       typeName: this.data.columns[index]
@@ -68,6 +69,7 @@ Page({
     //打包信息发给index页面
     //检查是否有问题
     var check = this.data.content;
+<<<<<<< HEAD
     var right = true;
 
     if (check == '') {
@@ -119,6 +121,34 @@ Page({
     //保存到本地缓存中
     wx.setStorageSync("elec_info", elec_info);
     
+=======
+
+    //检查（编写还有很大问题）
+    if (this.data.typeIndex == 3 && this.data.typeIndex_c == 0){
+      if(isNaN(check)||check.length!=4){
+        console.log("宿舍号有误");
+        return false;
+      }
+    } else if (this.data.typeIndex == 5 && (this.data.typeIndex_c == 0||    this.data.typeIndex_c == 1)){
+      if (check.length != 5){
+        console.log("宿舍号有误");
+        return false;
+      }
+    }else{
+      if(check.length!=5||!isNaN(check[0])){
+        console.log("宿舍号有误");
+        return false;
+      }
+    }
+    //打包传递
+    var elec_info={
+      content:this.data.content,
+      yuan:this.data.typeName,
+      lou:this.data.typeName_c
+    };
+    //保存到本地缓存中
+    wx.setStorageSync("elec_info", elec_info);
+>>>>>>> 0489292b45086dbd8f8750da4d0da06500c5ccaf
     wx.switchTab({
       url: '/pages/index/index',
       // url: '/pages/index/index',
