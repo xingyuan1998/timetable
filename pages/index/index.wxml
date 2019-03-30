@@ -2,7 +2,7 @@
 <view class='page__hd'>
   <view class='pandel'>
     <view class='panel-header'>
-      <image class='panel-header-image' src='../../icon/daohang.png'></image>
+      <image class='panel-header-image' src='../../icon/fingerpost.png'></image>
       <view   class='panel-header-title'>今日课程</view>
     </view>
     <view class='panel-body'>
@@ -16,7 +16,7 @@
               {{item.name}}
             </view>
             <view>
-              <image class='subject-room-image' src='../../icon/didian.png'></image>
+              <image class='subject-room-image' src='../../icon/dingwei.png'></image>
               <view class='subject-room'>{{item.room}}</view>
             </view>
           </view>
@@ -34,29 +34,29 @@
   <!-- 工具 -->
   <view class='pandel'>
     <view class='panel-header'>
-      <image class='panel-header-image' src='../../icon/daohang.png'></image>
+      <image class='panel-header-image' src='../../icon/fingerpost.png'></image>
       <view class='panel-header-title'>工具</view>
     </view>
-    <view class='panel-body'>
+    <view class='panel-body' >
 
 
-      <van-row>
-        <van-col span="6">
+      <van-row >
+        <van-col span="7" >
 
 
-<navigator  target="miniProgram" open-type="navigate" app-id="wx546c0e2609fbb964">
+<navigator  target="miniProgram" open-type="navigate" app-id="wx546c0e2609fbb964" class="navigator-style">
           <view class='wechat'>
-          <image class='wechatapp-image' src='../../icon/Logo-01.png'></image>
-          <view class='wechat-text'>矿大头像戳</view>
+            <image class='wechatapp-image' src='../../icon/touxiang.png'></image> 
+            <view class='wechat-text'>矿大头像戳</view>               
           </view>
-
+     
 </navigator>
 
 
         </van-col>
 
-      <van-col span="6">
-        <navigator hidden="true" url='../../pages/avatar/index/index'>
+      <van-col span="7">
+        <navigator hidden="true" url='../../pages/avatar/index/index' class="navigator-style">
             <view class='wechat'>
             <image class='wechatapp-image' src='../../icon/Logo-01.png'></image>
             <view class='wechat-text'>圣诞头像</view>
@@ -65,19 +65,19 @@
         </navigator>
       </van-col>
 
-      <van-col span="6">
-        <navigator url='../../pages/bus/bus'>
+      <van-col span="7">
+        <navigator url='../../pages/bus/bus' class="navigator-style">
             <view class='wechat'>
-            <image class='wechatapp-image' src='../../icon/Logo-01.png'></image>
+            <image class='wechatapp-image' src='../../icon/bashiche.png'></image>
             <view class='wechat-text'>校车</view>
             </view>
         </navigator>
       </van-col>
 
-      <van-col span="6">
-        <navigator url='../../pages/calendar/calendar'>
+      <van-col span="7">
+        <navigator url='../../pages/calendar/calendar' class="navigator-style">
             <view class='wechat'>
-            <image class='wechatapp-image' src='../../icon/Logo-01.png'></image>
+            <image class='wechatapp-image' src='../../icon/rili.png'></image>
             <view class='wechat-text'>校历</view>
             </view>
         </navigator>
@@ -90,10 +90,12 @@
     </view>
   </view>
 
+<view class="increase-distance"></view>
+
   <view class='pandel'>
     <view class='panel-header'>
-      <image class='panel-header-image' src='../../icon/daohang.png'></image>
-      <view class='panel-header-title'>宿舍余电</view>
+      <image class='panel-header-image' src='../../icon/fingerpost.png'></image>
+      <view class='panel-header-title'>宿舍用电</view>
     </view>
     <navigator url="../../pages/electricity/electricity" open-type="redirect">
       <view>  

@@ -1,9 +1,10 @@
 <!--about.wxml-->
 <view class="container">
-  <view class="header">
+  <!-- <view class="header">
     <view class="black-cover"></view>
     <image class="logo" src="../../icon/about.png"></image>
-  </view>
+  </view> -->
+    <image class="logo-bg" src="../../icon/my_about.png"></image>
   <view class="content">
     <view class="version">
       <view class="version-title">
@@ -12,7 +13,8 @@
     </view>
     <view class="describe">
       <text class="desc-title">简介</text>
-      <text class="desc-content">中国矿业大学翔工作室始建于2001年3月，隶属于中国矿业大学学生工作处，后改名为中国矿业大学学生在线。翔工作室云集了视觉设计、前端后端、视频技术、移动端开发等等人才，组建了一个旨在为全校同学提供服务的学生团队，设计出了许多的优秀产品，比如深受师生喜爱的矿大导航站、矿大周年庆头像戳等。
+      <!-- <view class="version"></view> -->
+      <text class="desc-content">中国矿业大学翔工作室始建于2000年10月，隶属于中国矿业大学学生工作处，后改名为中国矿业大学学生在线。翔工作室云集了视觉设计、前端后端、视频技术、移动端开发等等人才，组建了一个旨在为全校同学提供服务的学生团队，设计出了许多的优秀产品，比如深受师生喜爱的矿大导航站、矿大周年庆头像戳等。
 分组</text>
       <text class="desc-title">联系我们</text>
       <view class="desc-list">

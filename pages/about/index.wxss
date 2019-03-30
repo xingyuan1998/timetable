@@ -3,7 +3,13 @@
 .container{
     padding: 0;
     font-size: 11pt;
+    
 }
+
+view{
+  /* background-color: rgba(244,251,251,0.47); */
+}
+
 .header{
     position: relative;
     width: 100%;
@@ -157,4 +163,8 @@
     width: 10pt;
     height: 10pt;
     margin-right: 5rpx;
+}
+.logo-bg{
+  position: absolute;
+  z-index: -1;
 }

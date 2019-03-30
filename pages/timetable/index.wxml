@@ -1,10 +1,10 @@
 <!--pages/timetable/index.wxml-->
 
-<!-- <van-nav-bar
+<van-nav-bar
   title="{{weekName}}"
   right-text="选择当前周"
   bind:click-right="onClickRight"
-/> -->
+/>
 
 <view class="top">
   <view wx:for="{{['一','二','三','四','五','六','日']}}" wx:key="item" class="top-text">周{{item}}</view>

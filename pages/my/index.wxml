@@ -1,9 +1,18 @@
 <view class="page">
  <!--页头-->
  <view class="page__hd">
-    <view class='head'>
-        <view  class='userinfo-avatar'><navigator  url="/pages/my/info"><open-data  type="userAvatarUrl"></open-data></navigator></view>
-    <view><text class='userName'>{{user.name}}</text></view>
+    <view class='head' >
+      <image src='../../icon/my_bg.jpg' class='my-background-img'></image>
+      <view class='view-front'>
+        <view  class='userinfo-avatar'>
+          <!-- <navigator  url="/pages/my/info"> -->
+            <open-data  type="userAvatarUrl"></open-data>
+          <!-- </navigator> -->
+        </view>
+        <view >
+          <text class='userName'>{{user.name}}</text>
+        </view>
+      </view>
     </view>
 
  </view>

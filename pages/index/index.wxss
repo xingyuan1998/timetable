@@ -38,9 +38,23 @@
 .clear{
   clear: both;
 }
+
 .wechat{
   text-align: center;
   font-size: 30rpx;
+}
+
+.increase-distance{
+  height: 90rpx;
+}
+
+.navigator-style{
+  padding: 10px;
+  border-radius: 50%;
+  border: 1px solid  lightgrey;
+  width: 100rpx;
+  height: 100rpx;
+  margin-left: 30rpx;
 }
 .wechatapp-image{
   width: 100rpx;
@@ -72,4 +86,11 @@
   color: grey;
   margin-left:250rpx;
   margin-top:20rpx;
+}
+
+.wechat-text{
+  width: 150rpx;
+  margin-left:-10px; 
+  margin-top: 40rpx;
+  color: grey;
 }

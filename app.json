@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/timetable/index",
     "pages/index/index",
+    "pages/timetable/index",
     "pages/logs/logs",
     "pages/my/index",
     "pages/login/login",

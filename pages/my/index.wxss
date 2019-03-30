@@ -1,27 +1,43 @@
 /**index.wxss**/
-.head{display:flex;flex-direction: column;background: #efefef;width:100%;padding: 100rpx 0rpx; align-items: center;  justify-content: space-between;background: #fff}
+.head{display:flex;flex-direction: column;background: #efefef;width:100%;padding: 20rpx 0 0 100rpx ; align-items: center;  justify-content: space-between;background: #fff}
 .head-image{width:150rpx;height:150rpx;margin:0 auto;border-radius: 50%;}
 .list view{font-size:12pt;}
 .list .weui-cell{padding: 15px !important}
-.userName{color: black}
+.userName{
+  color: rgb(165, 157, 157);
+  margin-left:-110rpx;
+  
+}
 page{
-  background-color: #f5f5f5;
+  background-color: #fff;
 }
 .body{
   margin-top: 10rpx;
 }
+.view-front{
+position: relative;
+}
 .userinfo-avatar {  
   overflow:hidden;  
   display: block;  
-  width: 160rpx;  
-  height: 160rpx;  
-  margin: 20rpx;  
-  margin-top: 50rpx;  
+  width: 210rpx;  
+  height: 210rpx;  
+  margin: 60rpx;  
+  margin-top: 50rpx; 
+  margin-left:-155rpx;  
   border-radius: 50%;  
   border: 2px solid #fff;  
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
 }  
 
+.my-background-img{
+  height:320rpx;
+  width: 380rpx;
+  position: absolute;
+  top: 15rpx;
+  left: 180rpx;
+  z-index: 0;
+}
 
 .tips{
   font-size: 12px;

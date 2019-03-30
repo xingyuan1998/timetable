@@ -16,7 +16,7 @@ Page({
     this.getTimeTableInfo();
   },
   onClickRight: function() {
-    console.log("hheee");
+    console.log(this.data.weekName);
   },
   getInfo: function(){
    let currentDay = wx.getStorageSync("currentDay") || 1;

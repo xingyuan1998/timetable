@@ -48,7 +48,7 @@ App({
     });
 
     utils.getOpen();
-
+    
 
     // 获取用户信息
     wx.getSetting({

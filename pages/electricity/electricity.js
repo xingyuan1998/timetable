@@ -80,26 +80,16 @@ Page({
 
     //检查
     if (this.data.typeIndex == 3 && this.data.typeIndex_c == 0){
-      // if(isNaN(check)||check.length!=4){
-      //   // console.log("宿舍号有误");
-      //   right = false;
-      // }
+
       var reg=/^[0-9]{4}$/;
       right = reg.test(check);
     } else if (this.data.typeIndex == 5 && (this.data.typeIndex_c == 0||    this.data.typeIndex_c == 1)){
-      // if (check.length != 5 && isNaN(check[0])){
-      //   // console.log("宿舍号有误");              
-      //    //研究生楼的抓取一直失败，可能是data传输有问题！！！！！
-      //   right = false;        
-      // }
+
       var reg=/^[0-9]-[0-9]{3}$/;
       right = reg.test(check);
     }else{
-      // if(check.length!=5||!isNaN(check[0])){
-      //   // console.log("宿舍号有误");
-      //   right = false;
-      // }
-      var reg=/^[A-Ba-b][0-9]{4}$/;
+
+      var reg=/^[A-Za-z][0-9]{4}$/;
       right = reg.test(check);
     }
 
@@ -113,12 +103,19 @@ Page({
 
     var content = this.data.content;
     content=content.toUpperCase();
-    //打包传递
-    var elec_info={
-      flat: this.data.typeName[0] + this.data.typeName_c[0] + "楼",
-      room: content
-    };
-    // console.log(elec_info);
+    //打包传递(研究生楼传递的数据不同)
+    if (this.data.typeIndex == 5 && (this.data.typeIndex_c == 0 || this.data.typeIndex_c == 1)){
+      var elec_info = {
+        flat: this.data.typeName[0] + this.data.typeName_c[0],
+        room: content
+      };
+    }else{
+      var elec_info = {
+        flat: this.data.typeName[0] + this.data.typeName_c[0] + "楼",
+        room: content
+      };
+    }
+    //console.log(elec_info);
     //保存到本地缓存中
     wx.setStorageSync("elec_info", elec_info);
     

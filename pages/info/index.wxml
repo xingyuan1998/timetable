@@ -2,7 +2,7 @@
 <view class='page__hd body'>
   <view class='panel'>
     <view class='panel-header'>
-      <image class='panel-header-image' src='../../icon/gongju.png'></image>
+      <image class='panel-header-image' src='../../icon/fingerpost.png'></image>
       <view class='panel-header-title'>最近考试</view>
     </view>
     <view class='panel-body'>
@@ -21,7 +21,7 @@
               <view class='exam-content'>{{item.time}}</view>
             </view>
             <view class='exam-room'>
-              <image class='exam-room-image' src='../../icon/didian.png'></image>
+              <image class='exam-room-image' src='../../icon/dingwei.png'></image>
               <view class='exam-content'>{{item.room}}</view>
             </view>
           </view>
@@ -35,7 +35,7 @@
 
   <view class='panel'>
     <view class='panel-header'>
-      <image class='panel-header-image' src='../../icon/chengji.png'></image>
+      <image class='panel-header-image' src='../../icon/fingerpost.png'></image>
       <view class='panel-header-title'>考试成绩</view>
     </view>
     <view class='panel-body'>
