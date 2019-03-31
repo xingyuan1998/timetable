@@ -8,6 +8,7 @@
 
 view{
   /* background-color: rgba(244,251,251,0.47); */
+  opacity: 1;
 }
 
 .header{

@@ -38,6 +38,7 @@
 
 .choose-button{
   color: grey;
+  margin-top: 20rpx;
 }
 
 .tips{

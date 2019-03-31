@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <view class='page__hd'>
+  
   <view class='pandel'>
     <view class='panel-header'>
       <image class='panel-header-image' src='../../icon/fingerpost.png'></image>
@@ -99,11 +100,12 @@
     </view>
     <navigator url="../../pages/electricity/electricity" open-type="redirect">
       <view>  
-          <text class="text-elec">宿舍余电：</text>
-          <text class="button-elec" wx:if="{{elec_choose_button}}" class='text-show-elec'>
+          <!-- <text class="text-elec">宿舍余电：</text> -->
+          <image src='../../icon/dianliang.png' class='elec-bg'></image>
+          <text wx:if="{{elec_choose_button}}" class='text-show-elec'>
             选择宿舍
           </text>
-          <text wx:if="{{elec_show_text}}" class='text-show-elec'>{{elec}} 度</text>
+          <text wx:if="{{elec_show_text}}" class='text-show-elec-1'>{{elec}} 度</text>
       </view>
     </navigator>
   </view>
