@@ -44,7 +44,7 @@ function req(url, data, su, fa) {
 function getOpen(){
   // 获取应用系统信息
   let openDate = (wx.getStorageSync("openDate") - 1000 * 60 * 60 * 8) || null;
-  if (openDate != null) {
+  if (openDate != null && openDate != 0) {
     console.info(openDate);//找不到。。。
     let week = Math.trunc((new Date().getTime() - openDate) / (1000 * 60 * 60 * 24 * 7) + 1);
     let day = Math.trunc((new Date().getTime() - openDate) / (1000 * 60 * 60 * 24) % 7 + 1);

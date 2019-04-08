@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "空教室查询",
+  "usingComponents": {
+    "van-field": "../../vant-weapp/field/index",
+    "van-dialog": "../../vant-weapp/dialog/index"
+  }
+}

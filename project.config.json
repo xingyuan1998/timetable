@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 13,
+			"current": 14,
 			"list": [
 				{
 					"id": -1,
@@ -130,6 +130,13 @@
 					"id": -1,
 					"name": "ele",
 					"pathName": "pages/electricity/electricity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "roomspace/roomspace",
+					"pathName": "pages/roomspace/roomspace",
 					"scene": null
 				}
 			]

@@ -84,6 +84,18 @@
         </navigator>
       </van-col>
 
+      <view style='height:250rpx'></view>
+
+      <van-col span="7">
+        <navigator url='../../pages/roomspace/roomspace' class="navigator-style">
+            <view class='wechat'>
+            <image class='wechatapp-image' src='../../icon/dingwei.png'></image>
+            <view class='wechat-text'>空教室查询</view>
+            </view>
+        </navigator>
+      </van-col>
+
+
       </van-row>
 
 
@@ -101,7 +113,7 @@
     <navigator url="../../pages/electricity/electricity" open-type="redirect">
       <view>  
           <!-- <text class="text-elec">宿舍余电：</text> -->
-          <image src='../../icon/dianliang.png' class='elec-bg'></image>
+          <!-- <image src='../../icon/dianliang.png' class='elec-bg'></image> -->
           <text wx:if="{{elec_choose_button}}" class='text-show-elec'>
             选择宿舍
           </text>

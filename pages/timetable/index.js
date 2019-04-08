@@ -8,8 +8,65 @@ Page({
     colorArrays: ["#55efc4", "#81ecec", "#55efc4", "#fd79a8", "#74b9ff", "#55efc4", "#81ecec", "#fd79a8"],
     wlist: [],
     currentWeek: 16,
-    weekName:"第一周"
+    copyWeek:16,
+    weekName:"第一周",
+    activeName: '0',
+    show: false,
+    columns: [],
+    typeIndex: 0
   },
+
+  onChange:function(event) {
+    this.setData({
+      activeName: event.detail,
+    });
+
+  },
+
+  onPickerChange:function(event){
+    const { picker, value, index } = event.detail;
+    this.setData({
+      typeIndex: index,
+    });
+  },
+
+  onClose(event) {
+    if (event.detail === 'confirm') {
+      this.setData({
+        show: false,
+        currentWeek:this.data.typeIndex + 1,
+        weekName: "第" + (this.data.typeIndex + 1)+"周"
+      });
+        console.log(this.data.weekName);
+      wx.setNavigationBarTitle({
+        title: "第" + this.data.currentWeek + "周",//有滞后的问题???
+      })
+      this.getTimeTableInfo();
+    } else {
+      this.setData({
+        show: false
+      });
+    }
+  },
+
+  OpenDialog:function(){
+    this.setData({
+      activeName: 0,
+      show: true
+    });
+
+  },
+
+  returnCurrentWeek:function(){
+    this.setData({
+      currentWeek:this.data.copyWeek
+    });
+    wx.setNavigationBarTitle({
+      title: "第" + this.data.currentWeek + "周",
+    })
+    this.getTimeTableInfo();
+  },
+
   onLoad: function() {
     console.log('onLoad');
     this.getInfo();
@@ -26,9 +83,17 @@ Page({
     wx.setNavigationBarTitle({
       title: "第" + currentWeek + "周"
     })
+    var week=[];
+    for(var i=1;i<=20;i++){
+      week.push("第"+i+"周");
+    }
+    this.setData({
+      columns:week,
+      copyWeek:currentWeek
+    });
   },
 
-  getData: function() {
+/*  getData: function() {
     let that = this;
     let kbList = wx.getStorageSync("kb") || [];
     console.info(kbList.length);
@@ -63,14 +128,12 @@ Page({
             }
           });
           that.setData({ wlist: kbListCurWeek });
-
-
         }
       });
     }
-
-
   },
+
+*/
 
   getTimeTableInfo: function () {
     let that = this;
@@ -158,6 +221,6 @@ Page({
   },
   onPullDownRefresh: function(){
     this.getInfo();
-    this.getData();
+    // this.getData();
   }
 })

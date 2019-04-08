@@ -1,6 +1,11 @@
 {
   "usingComponents": {
-   "van-nav-bar": "../../vant-weapp/nav-bar/index"
+      "van-action-sheet":"../../vant-weapp/action-sheet/index",
+      "van-cell": "../../vant-weapp/cell/index",
+      "van-collapse": "../../vant-weapp/collapse/index",
+      "van-collapse-item":"../../vant-weapp/collapse-item/index",
+      "van-dialog": "../../vant-weapp/dialog/index",
+      "van-picker": "../../vant-weapp/picker/index"
   },
   "navigationBarTitleText": "第1周",
   "enablePullDownRefresh": true

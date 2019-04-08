@@ -18,7 +18,8 @@
     "pages/bus/bus",
     "pages/calendar/calendar",
     "pages/electricity/electricity",
-    "pages/timetable_detail/timetable_detail"
+    "pages/timetable_detail/timetable_detail",
+    "pages/roomspace/roomspace"
   ],
   "tabBar": {
     "color": "#626567",

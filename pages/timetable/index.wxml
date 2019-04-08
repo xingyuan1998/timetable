@@ -1,10 +1,24 @@
 <!--pages/timetable/index.wxml-->
 
-<!-- <van-nav-bar
-  title="{{weekName}}"
-  right-text="选择当前周"
-  bind:click-right="onClickRight"
-/> -->
+<van-collapse value="{{ activeName }}" bind:change="onChange" accordion >
+  <van-collapse-item title="功能分区" name="1">
+    <button class='change-week' bindtap='OpenDialog'>选择周</button>
+    <button class='change-week' bindtap='returnCurrentWeek'>返回当前周</button>
+    <button class='change-week'>课程管理</button>
+  </van-collapse-item>
+</van-collapse>
+
+<van-dialog
+  use-slot
+  async-close
+  show="{{ show }}"
+  show-cancel-button
+  bind:close="onClose"
+  z-index="230"
+>
+    <van-picker columns="{{ columns }}" bind:change="onPickerChange" data-index='' />
+</van-dialog>
+
 
 <view class="top">
   <view wx:for="{{['一','二','三','四','五','六','日']}}" wx:key="item" class="top-text">周{{item}}</view>
@@ -30,4 +44,6 @@
       </view>
     </view>
   </view>
+  <view style='height:200rpx'></view>
 </scroll-view>
+

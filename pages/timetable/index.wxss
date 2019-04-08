@@ -51,3 +51,7 @@
   display: flex;
   align-items: center;
 }
+
+.change-week{
+  background-color: #fff;
+}
