@@ -1,8 +1,65 @@
   <view style='height:50rpx'></view>
 
-  <van-dialog id="van-dialog" />
+  <van-dialog 
+    id="van-dialog" 
+  />
 
-  <van-field
+  <view class="choose">
+    <van-popup show="{{ show_week }}" bind:close="onPickerClose_week"  position="bottom">
+    <view bindtap='onPickerClose_week' class='close-picker' >关闭</view>
+    <van-picker columns="{{ columns_week }}" bind:change="onPickerChange_week" />
+    </van-popup>
+        <van-cell
+        class="van-cell-shq"
+
+        title="{{docu_title_week}}"
+        value="{{typeName_week}}"
+        bindtap="onPickerShow_week"
+      />
+  </view>
+
+  <view class="choose">
+    <van-popup show="{{ show_day }}" bind:close="onPickerClose_day"  position="bottom">
+    <view bindtap='onPickerClose_day' class='close-picker' >关闭</view>
+    <van-picker columns="{{ columns_day }}" bind:change="onPickerChange_day" />
+    </van-popup>
+        <van-cell
+        class="van-cell-shq"
+
+        title="{{docu_title_day}}"
+        value="{{typeName_day}}"
+        bindtap="onPickerShow_day"
+      />
+  </view>
+
+  <view class="choose">
+    <van-popup show="{{ show_jc }}" bind:close="onPickerClose_jc"  position="bottom">
+    <view bindtap='onPickerClose_jc' class='close-picker' >关闭</view>
+    <van-picker columns="{{ columns_jc }}" bind:change="onPickerChange_jc" />
+    </van-popup>
+        <van-cell
+        class="van-cell-shq"
+
+        title="{{docu_title_jc}}"
+        value="{{typeName_jc}}"
+        bindtap="onPickerShow_jc"
+      />
+  </view>
+
+  <view class="choose">
+    <van-popup show="{{ show_lh }}" bind:close="onPickerClose_lh"  position="bottom">
+    <view bindtap='onPickerClose_lh' class='close-picker' >关闭</view>
+    <van-picker columns="{{ columns_lh }}" bind:change="onPickerChange_lh" />
+    </van-popup>
+        <van-cell
+        class="van-cell-shq"
+
+        title="{{docu_title_lh}}"
+        value="{{typeName_lh}}"
+        bindtap="onPickerShow_lh"
+      />
+  </view>
+  <!-- <van-field
     value="{{ week }}"
     required
     clearable
@@ -24,28 +81,28 @@
 
   <!-- <view style='height:30rpx'></view> -->
 
-  <van-field
+  <!-- <van-field
     value="{{ classTime }}"
     required
     clearable
     label="节次"
     placeholder="请输入节次 (开始节次) "
     bindinput='bindinputClass'
-  />
+  /> -->
 
   <!-- <view style='height:30rpx'></view> -->
 
-  <van-field
+  <!-- <van-field
     value="{{ flat }}"
     required
     clearable
     label="楼号"
     placeholder="请输入楼号（例：博1）"
     bindinput='bindinputFlat'
-  />
+  /> -->
 
   <view style='height:100rpx'></view>
 
   <button bindtap='submit'>查询</button>
 
-  <text class="tips" >空教室查询输入规则：\n1.周数对应当前周，只写数字\n2.星期以星期一为开始，分别对应1，2，3，4，5，6，7\n3.节次代表课程开始时对应的节数\n4.楼号输入 博+数字 查询</text>
+  <!-- <text class="tips" >空教室查询输入规则：\n1.周数对应当前周，只写数字\n2.星期以星期一为开始，分别对应1，2，3，4，5，6，7\n3.节次代表课程开始时对应的节数\n4.楼号输入 博+数字 查询</text> -->

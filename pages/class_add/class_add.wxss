@@ -1,0 +1,37 @@
+/* pages/class_add/class_add.wxss */
+
+.week-text{
+  margin: 10px 0 10px 10px;
+}
+
+.week-choose{
+  margin: 10px 0 10px 10px;
+}
+
+.week-div-checkbox{
+  display: inline-block;
+  width: 110rpx;
+  height:70rpx;
+  border: 0.3rpx solid lightgrey;
+  text-align: center;
+  line-height: 70rpx;
+}
+
+.quick-function{
+  margin: 20px 0 20px 10px;
+}
+
+.quick-function-view{
+  display: inline-block;
+  width: 183rpx;
+  height:70rpx;
+  border: 0.5rpx solid grey;
+  text-align: center;
+  line-height: 70rpx;
+}
+
+.close-picker{
+  color: blue;
+  text-align: right;
+  margin: 10rpx;
+}

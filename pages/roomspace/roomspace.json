@@ -2,6 +2,10 @@
   "navigationBarTitleText": "空教室查询",
   "usingComponents": {
     "van-field": "../../vant-weapp/field/index",
-    "van-dialog": "../../vant-weapp/dialog/index"
+    "van-dialog": "../../vant-weapp/dialog/index",
+    "van-switch-cell": "../../vant-weapp/switch-cell/index",
+    "van-picker": "../../vant-weapp/picker/index",
+    "van-popup": "../../vant-weapp/popup/index",
+    "van-cell": "../../vant-weapp/cell/index"
   }
 }

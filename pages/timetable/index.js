@@ -39,7 +39,7 @@ Page({
       });
         console.log(this.data.weekName);
       wx.setNavigationBarTitle({
-        title: "第" + this.data.currentWeek + "周",//有滞后的问题???
+        title: "第" + this.data.currentWeek + "周",
       })
       this.getTimeTableInfo();
     } else {
@@ -138,11 +138,13 @@ Page({
   getTimeTableInfo: function () {
     let that = this;
     let kb = wx.getStorageSync("kb") || null;
-
+    //新的改动
+    let setclass = wx.getStorageSync("setClass") || null;
+    //结束
     if (that.data.isUpdate || kb == null) {
       console.info("need to update")
       util.getReq("kb", {}, function (res) {
-        console.info(res);
+        // console.info(res);
         if (res['code'] === 0) {
           wx.setStorageSync("kb", res['data']['timetable']);
           let kbList = res['data']['timetable'];
@@ -156,7 +158,21 @@ Page({
               subject.kcmc = item['name'] + "@" + item['room'];
               subject.id = item['id'];
               kbListCurWeek.push(subject);
+            };
+            //新的改动
+            if(setclass!=null){
+              setclass.forEach(item => {
+                var subject = {}
+                subject.xqj = item['day'];
+                subject.skjc = item['start'];
+                subject.skcd = item['step'];
+                subject.kcmc = item['name'] + "@" + item['room'];
+                // subject.id = item['id'];
+                //不完善。。。
+                kbListCurWeek.push(subject);
+              })
             }
+            //结束
           });
           that.setData({ wlist: kbListCurWeek });
 
@@ -166,6 +182,7 @@ Page({
       console.info("not need update")
       // let kbList = kb;
       let kbList = wx.getStorageSync("kb") || [];
+      // console.log(kbList)
       let kbListCurWeek = [];
       kbList.forEach(item => {
         if (that.hasSubject(item['week_list'], that.data.currentWeek)) {
@@ -177,9 +194,24 @@ Page({
           subject.id = item['id'];
           kbListCurWeek.push(subject);
         }
+        //新的改动
+        if(setclass!=null){
+          setclass.forEach(item => {
+            var subject = {}
+            subject.xqj = item['day'];
+            subject.skjc = item['start'];
+            subject.skcd = item['step'];
+            subject.kcmc = item['name'] + "@" + item['room'];
+            // subject.id = item['id'];
+            //不完善。。。
+            kbListCurWeek.push(subject);
+          })
+        }
+        //结束
       });
       that.setData({ wlist: kbListCurWeek });
     }
+
 
   },
 
@@ -214,6 +246,13 @@ Page({
       url: '../../pages/timetable_detail/timetable_detail?start=' + e.currentTarget.dataset.index + "&day=" + e.currentTarget.dataset.statu,
     })
 
+  },
+
+  add_class:function(){
+    wx.navigateTo({
+      url: '../../pages/class_add/class_add'
+    })
+    
   },
 
   onShareAppMessage: function(){

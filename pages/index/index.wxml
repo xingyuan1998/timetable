@@ -31,7 +31,6 @@
     </view>
   </view>
 
-
   <!-- 工具 -->
   <view class='pandel'>
     <view class='panel-header'>
@@ -40,10 +39,8 @@
     </view>
     <view class='panel-body' >
 
-
       <van-row >
-        <van-col span="7" >
-
+        <van-col span="6">
 
 <navigator  target="miniProgram" open-type="navigate" app-id="wx546c0e2609fbb964" class="navigator-style">
           <view class='wechat'>
@@ -52,11 +49,8 @@
           </view>
      
 </navigator>
-
-
         </van-col>
-
-      <van-col span="7">
+      <van-col span="6">
         <navigator hidden="true" url='../../pages/avatar/index/index' class="navigator-style">
             <view class='wechat'>
             <image class='wechatapp-image' src='../../icon/Logo-01.png'></image>
@@ -66,7 +60,7 @@
         </navigator>
       </van-col>
 
-      <van-col span="7">
+      <van-col span="6">
         <navigator url='../../pages/bus/bus' class="navigator-style">
             <view class='wechat'>
             <image class='wechatapp-image' src='../../icon/bashiche.png'></image>
@@ -75,7 +69,7 @@
         </navigator>
       </van-col>
 
-      <van-col span="7">
+      <van-col span="6">
         <navigator url='../../pages/calendar/calendar' class="navigator-style">
             <view class='wechat'>
             <image class='wechatapp-image' src='../../icon/rili.png'></image>
@@ -84,9 +78,7 @@
         </navigator>
       </van-col>
 
-      <view style='height:250rpx'></view>
-
-      <van-col span="7">
+      <van-col span="6">
         <navigator url='../../pages/roomspace/roomspace' class="navigator-style">
             <view class='wechat'>
             <image class='wechatapp-image' src='../../icon/dingwei.png'></image>
@@ -111,13 +103,13 @@
       <view class='panel-header-title'>宿舍用电</view>
     </view>
     <navigator url="../../pages/electricity/electricity" open-type="redirect">
-      <view>  
+      <view class='position-helper'>  
           <!-- <text class="text-elec">宿舍余电：</text> -->
-          <!-- <image src='../../icon/dianliang.png' class='elec-bg'></image> -->
-          <text wx:if="{{elec_choose_button}}" class='text-show-elec'>
+          <image src='../../icon/dianliang.png' class='elec-bg'></image>
+          <text wx:if="{{elec_choose_button}}" class='text-show-elec-button'>
             选择宿舍
           </text>
-          <text wx:if="{{elec_show_text}}" class='text-show-elec-1'>{{elec}} 度</text>
+          <text wx:if="{{elec_show_text}}" class='text-show-elec-text'>{{elec}} 度</text>
       </view>
     </navigator>
   </view>

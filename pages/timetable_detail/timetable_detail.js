@@ -21,7 +21,7 @@ Page({
     var kblist=[];
     kb.forEach(item => {
       if(start==item["start"]&&day==item["day"]){
-        //console.log(item);
+        // console.log(item);
         item.showtime = item['start'] + "-" + (item['start'] + item['step'] - 1) + "节";
         kblist.push(item);
       }

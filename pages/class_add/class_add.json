@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "添加课程",
+  "usingComponents": {
+      "van-cell": "../../vant-weapp/cell/index",
+      "van-cell-group": "../../vant-weapp/cell-group/index",
+      "van-field": "../../vant-weapp/field/index",
+      "van-picker": "../../vant-weapp/picker/index",
+      "van-dialog": "../../vant-weapp/dialog/index",
+      "van-button": "../../vant-weapp/button/index",
+      "van-switch-cell": "../../vant-weapp/switch-cell/index",
+      "van-popup": "../../vant-weapp/popup/index",
+      "van-notify": "../../vant-weapp/notify/index"
+  }
+}

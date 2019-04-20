@@ -2,9 +2,10 @@
 
 <van-collapse value="{{ activeName }}" bind:change="onChange" accordion >
   <van-collapse-item title="功能分区" name="1">
-    <button class='change-week' bindtap='OpenDialog'>选择周</button>
-    <button class='change-week' bindtap='returnCurrentWeek'>返回当前周</button>
-    <button class='change-week'>课程管理</button>
+    <van-button  class='change-week' bindtap='OpenDialog'>选择周</van-button>
+    <van-button  class='change-week' bindtap='returnCurrentWeek'>返回当前周</van-button>
+    <van-button  class='change-week' bindtap='add_class'>添加课程</van-button>
+    <!-- <button class='change-week'>课程管理</button> -->
   </van-collapse-item>
 </van-collapse>
 

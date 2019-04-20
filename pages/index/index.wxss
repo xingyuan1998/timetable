@@ -52,13 +52,13 @@
   padding: 10px;
   border-radius: 50%;
   border: 1px solid  lightgrey;
-  width: 100rpx;
-  height: 100rpx;
+  width: 80rpx;
+  height: 80rpx;
   margin-left: 30rpx;
 }
 .wechatapp-image{
-  width: 100rpx;
-  height: 100rpx;
+  width: 80rpx;
+  height: 80rpx;
 }
 
 .button-elec{
@@ -78,18 +78,18 @@
   color:black;
 }
 
-.text-show-elec{
+.text-show-elec-button{
   height:50rpx;
-  line-height: 50rpx;
+  line-height: 20rpx;
   font-size: 50rpx;
   font-weight:500;
   display: block;
   color: grey;
-  margin-left:240rpx;
-  margin-top:23rpx;
+  margin-left:230rpx;
+  margin-top:70rpx;
 }
 
-.text-show-elec-1{
+.text-show-elec-text{
   height:50rpx;
   line-height: 50rpx;
   font-size: 50rpx;
@@ -104,14 +104,14 @@
   position: absolute;
   height: 350rpx;
   width: 350rpx;
-  top: 500rpx;
+  top: -150rpx;
   left: 185rpx;
   z-index: -1;
 }
 
 .wechat-text{
   width: 150rpx;
-  margin-left:-10px; 
+  margin-left:-15px; 
   margin-top: 40rpx;
   color: grey;
 }
@@ -120,3 +120,6 @@
   text-align: center;
 }
 
+.position-helper{
+  position: relative;
+}

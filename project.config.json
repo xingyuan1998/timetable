@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 14,
+			"current": 17,
 			"list": [
 				{
 					"id": -1,
@@ -92,9 +92,9 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 8,
 					"name": "my/index",
-					"pathName": "pages/my/index",
+					"pathName": "pages/index/index",
 					"query": "",
 					"scene": null
 				},
@@ -137,6 +137,27 @@
 					"id": -1,
 					"name": "roomspace/roomspace",
 					"pathName": "pages/roomspace/roomspace",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "roomspace",
+					"pathName": "pages/roomspace/roomspace",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "timetable",
+					"pathName": "pages/timetable/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "class",
+					"pathName": "pages/class_add/class_add",
 					"scene": null
 				}
 			]

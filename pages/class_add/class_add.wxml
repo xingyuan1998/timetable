@@ -1,0 +1,109 @@
+<!--pages/class_add/class_add.wxml-->
+<van-notify id="van-notify" />
+
+<view class="pages">
+  <van-cell-group>
+  <van-cell
+    title="录入信息:"
+    border="{{ false }}"
+  />
+
+  <van-field
+    value="{{ classname }}"
+    clearable
+    label="课名"
+    placeholder="课程"
+    bindinput="onClickIcon_class"
+  />
+  <van-field
+    value="{{ roomname }}"
+    clearable
+    label="教室"
+    placeholder="教室"
+    bindinput="onClickIcon_room"
+  />
+  <van-field
+    value="{{ teachername }}"
+    clearable
+    label="老师"
+    placeholder="老师"
+    bindinput="onClickIcon_teacher"
+  />
+
+  <van-cell
+    title="周数"
+    is-link
+    bindtap="week_choice"
+  />
+
+  <van-dialog
+      use-slot
+      async-close
+      show="{{ dialogShow }}"
+      show-cancel-button
+      confirm-button-open-type="getUserInfo"
+      bind:close="onClose"
+      bind:getuserinfo="getUserInfo"
+  >
+  <view class="week-text">周数选择</view>
+  <view class="week-choose">
+    <view wx:for="{{week}}" wx:key="item" class='week-div-checkbox' bindtap="change_color"
+    data-index="{{item}}" style='background:{{background[item]}};color:{{color[item]}} '>{{item}}</view>
+  </view>
+  <view class='quick-function'>
+    <!-- <view class='quick-function-view' style='background:{{quick_bg[0]}};color:{{quick_col[0]}} '
+    bindtap='choose_single'>单周</view>
+    <view class='quick-function-view' style='background:{{quick_bg[1]}};color:{{quick_col[1]}} '
+    bindtap="choose_double">双周</view> -->
+    <view class='quick-function-view' style='background:{{quick_bg}};color:{{quick_col}} '
+    bindtap='choose_all'>全选</view>
+  </view>
+  </van-dialog>
+
+  <view class="choose">
+    <van-popup show="{{ show_day }}" bind:close="onPickerClose_day"  position="bottom">
+    <view bindtap='onPickerClose_day' class='close-picker' >关闭</view>
+    <van-picker columns="{{ columns_day }}" bind:change="onPickerChange_day" />
+    </van-popup>
+        <van-cell
+        class="van-cell-shq"
+
+        title="{{docu_title_day}}"
+        value="{{typeName_day}}"
+        bindtap="onPickerShow_day"
+      />
+  </view>
+
+  <view class="choose">
+    <van-popup show="{{ show_jc }}" bind:close="onPickerClose_jc"  position="bottom">
+    <view bindtap='onPickerClose_jc' class='close-picker' >关闭</view>
+    <van-picker columns="{{ columns_jc }}" bind:change="onPickerChange_jc" />
+    </van-popup>
+        <van-cell
+        class="van-cell-shq"
+
+        title="{{docu_title_jc}}"
+        value="{{typeName_jc}}"
+        bindtap="onPickerShow_jc"
+      />
+  </view>
+
+  <view class="choose">
+    <van-popup show="{{ show_jc_fin }}" bind:close="onPickerClose_jc_fin"  position="bottom">
+    <view bindtap='onPickerClose_jc_fin' class='close-picker' >关闭</view>
+    <van-picker columns="{{ columns_jc_fin }}" bind:change="onPickerChange_jc_fin" />
+    </van-popup>
+        <van-cell
+        class="van-cell-shq"
+
+        title="{{docu_title_jc_fin}}"
+        value="{{typeName_jc_fin}}"
+        bindtap="onPickerShow_jc_fin"
+      />
+  </view>
+
+</van-cell-group>
+
+  <view style='height:100rpx'></view>
+  <van-button bindtap='add'  size="large">提交</van-button>
+</view>

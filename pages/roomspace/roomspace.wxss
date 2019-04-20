@@ -3,3 +3,10 @@
   color: grey;
 }
 
+.close-picker{
+  color: blue;
+  text-align: right;
+  margin: 10rpx;
+}
+
+

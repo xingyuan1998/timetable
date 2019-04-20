@@ -19,7 +19,8 @@
     "pages/calendar/calendar",
     "pages/electricity/electricity",
     "pages/timetable_detail/timetable_detail",
-    "pages/roomspace/roomspace"
+    "pages/roomspace/roomspace",
+    "pages/class_add/class_add"
   ],
   "tabBar": {
     "color": "#626567",

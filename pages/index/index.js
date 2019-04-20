@@ -1,4 +1,4 @@
-﻿//index.js
+//index.js
 //获取应用实例
 let util = require("../../utils/util.js");
 const app = getApp()
@@ -41,7 +41,7 @@ Page({
             elec_show_text: false,
           });
           wx.showToast({
-            title: '抓取失败',
+            title: '抓取失败，服务器错误',
             icon: 'none',
           });
           return;
