@@ -6,18 +6,18 @@ var notify = require('../../vant-weapp/notify/notify');
 
 Page({
   data: {
-    dialogShow:false,
-    background:[],
-    color:[],
-    quick_bg:'white',
+    dialogShow: false,
+    background: [],
+    color: [],
+    quick_bg: 'white',
     quick_col: 'black',
-    classname:'',
-    classroom:'',
-    teacher:'',
-    weeks:[],
-    day:1,
-    classTime_on:1,
-    classTime_fin:1,
+    classname: '',
+    classroom: '',
+    teacher: '',
+    weeks: [],
+    day: 1,
+    classTime_on: 1,
+    classTime_fin: 1,
 
     show_day: false,
     columns_day: ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日'],
@@ -36,6 +36,11 @@ Page({
     typeIndex_jc_fin: 1,
     typeName_jc_fin: "第1节课",
     docu_title_jc_fin: "结束时间",
+
+
+    // 新增
+    setClass:wx.getStorageSync("setClass")
+
   },
 
   onPickerChange_day: function (event) {
@@ -96,53 +101,57 @@ Page({
     this.setData({ show_jc: false });
   },
 
-  onLoad(){
+  onLoad() {
     this.init();
+    // 新增
+    this.setData({
+      setClass: wx.getStorageSync("setClass")
+    })
   },
 
-  init:function(){
-    var week=[];
+  init: function () {
+    var week = [];
     var background = [];
     var color = [];
     var jc = [];
     for (var i = 0; i < 10; i++) {
       jc[i] = "第" + (i + 1) + "节课";
     };
-    for(var i=0;i<20;i++){
-      week[i] = (i+1);
+    for (var i = 0; i < 20; i++) {
+      week[i] = (i + 1);
       background[i] = "white";
-      color[i] =  "black";
+      color[i] = "black";
     }
     this.setData({
-      week:week,
-      background:background,
-      color:color,
+      week: week,
+      background: background,
+      color: color,
       columns_jc: jc,
-      columns_jc_fin:jc
+      columns_jc_fin: jc
     });
 
   },
 
-  week_choice:function(){
+  week_choice: function () {
     this.setData({
       dialogShow: true
     });
   },
 
-  change_color:function(e){
+  change_color: function (e) {
     var index = e.currentTarget.dataset.index;
     // console.log(index);
-    
-    if(this.data.background[index]=="white"){
+
+    if (this.data.background[index] == "white") {
       var background = this.data.background;
       var color = this.data.color;
       background[index] = MyColor;
       color[index] = "white";
       this.setData({
         background: background,
-        color:color
+        color: color
       })
-    
+
     } else if (this.data.background[index] == MyColor) {
       var background = this.data.background;
       var color = this.data.color;
@@ -152,8 +161,8 @@ Page({
         background: background,
         color: color
       })
-    }    
-    if (this.data.quick_bg == MyColor){
+    }
+    if (this.data.quick_bg == MyColor) {
       this.setData({
         quick_bg: "white",
         quick_col: "black"
@@ -162,19 +171,19 @@ Page({
   },
 
   //全选
-  choose_all:function(){
+  choose_all: function () {
     var bg = this.data.quick_bg;
     var col = this.data.quick_col;
-    if(bg=="white"){
+    if (bg == "white") {
       bg = MyColor;
-      col="white"
+      col = "white"
       var background = [];
       var color = [];
       for (var i = 0; i <= 20; i++) {
         background[i] = MyColor;
         color[i] = "white";
       }
-    } else if (bg == MyColor){
+    } else if (bg == MyColor) {
       bg = "white";
       col = "black";
       var background = [];
@@ -192,13 +201,13 @@ Page({
     })
   },
 
-  onClose:function(){
+  onClose: function () {
     this.setData({
       dialogShow: false
-    });    
+    });
   },
 
-  onClickIcon_class:function(e){
+  onClickIcon_class: function (e) {
     //console.log(e.detail);
     this.setData({
       classname: e.detail
@@ -219,51 +228,73 @@ Page({
     });
   },
 
-  getUserInfo(){
-    var bg=this.data.background;
-    var weeks=[]
-    var count=0;
-    for(var i=0;i<=20;i++){
-      if (bg[i] == MyColor){
+  getUserInfo() {
+    var bg = this.data.background;
+    var weeks = []
+    var count = 0;
+    for (var i = 0; i <= 20; i++) {
+      if (bg[i] == MyColor) {
         weeks[count] = i;
         count++;
       }
     }
     console.log(weeks)
     this.setData({
-      weeks:weeks
+      weeks: weeks
     })
   },
 
   //提交
-  add:function(){
-    var classname=this.data.classname;
-    var classroom=this.data.classroom;
-    var teacher=this.data.teacher;
-    var weeks=this.data.weeks; 
-    var day=this.data.day;
-    var classTime_on=this.data.classTime_on;
-    var classTime_fin=this.data.classTime_fin;
-    var kbAdd={};
-    if(classTime_on>classTime_fin||classname==''){
-      Notify('开始结束时间有误，课名不能为空');
+  add: function () {
+    console.log(this.data.weeks == [])
+    if (this.data.classTime_on > this.data.classTime_fin || this.data.classname == '' || this.data.weeks.length == 0) {
+      Notify('时间有误，课名不能为空');
       return;
     }
-    kbAdd.day = day;
-    kbAdd.name = classname;
-    kbAdd.room = classroom;
-    kbAdd.week = weeks;
-    kbAdd.teacher = teacher;
-    kbAdd.start = classTime_on;
-    kbAdd.step = classTime_fin-classTime_on+1; 
-    console.log(kbAdd);
-    let setClassTmp = wx.getStorageSync("setClass") || [];
-    setClassTmp.push(kbAdd);
-    wx.setStorageSync("setClass",setClassTmp);
-  }
-  
-})
+    var that = this;
+    wx.showModal({
+      content: '确认添加课程',
+      success: function (res) {
+        if (res.confirm) {
+          var kbAdd = {};
+          kbAdd.day = that.data.day;
+          kbAdd.name = that.data.classname;
+          kbAdd.room = that.data.classroom;
+          kbAdd.week_list = that.data.weeks;
+          kbAdd.teacher = that.data.teacher;
+          kbAdd.start = that.data.classTime_on;
+          kbAdd.step = that.data.classTime_fin - that.data.classTime_on + 1;
+          var myid = wx.getStorageSync("myid") || 1;
+          kbAdd.id = "Z" + myid;
+          wx.setStorageSync("myid", myid + 1);
+          console.log(kbAdd);
+          let setClassTmp = wx.getStorageSync("setClass") || [];
+          setClassTmp.push(kbAdd);
+          wx.setStorageSync("setClass", setClassTmp);
+          wx.reLaunch({
+            url: '../timetable/index',
+          })
+        }
+      }
+    })
+  },
 
+  deleteClass(event){
+    // console.log(event.target.dataset.index);
+    // console.log(this.data.setClass)
+    let findindex = this.data.setClass.findIndex((arr) => {
+      return arr.id === event.target.dataset.index;
+    })
+    // console.log(findindex)
+    this.data.setClass.splice(findindex,1)
+    
+    wx.setStorageSync("setClass", this.data.setClass);
+    wx.reLaunch({
+      url: '../timetable/index',
+    })
+  }
+
+})
 
 //还有好多问题，
 //1 添加以后是否跳转到timetable（不跳转的话，返回后新的课程不会出现）
