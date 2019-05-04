@@ -35,3 +35,29 @@
   text-align: right;
   margin: 10rpx;
 }
+
+/* 新增 */
+.pages .add-title{
+  padding: 0 24rpx;
+  display: inline-block;
+  font-size: 32rpx;
+}
+.the-addclasses{
+  padding: 24rpx;
+}
+.the-addclasses .the-addclass{
+  position: relative;
+  width: 100%;
+  font-size: 27rpx;
+  line-height: 70rpx;
+  border-bottom: 1px dotted black;
+  margin-bottom: 12rpx;
+}
+.the-addclasses .the-addclass .delete-btn{
+  position: absolute;
+  right: 6px;
+  height: 60rpx;
+  line-height: 60rpx;
+  top: 0rpx;
+  color: rgb(251, 232, 255);
+}
